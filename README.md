@@ -8,18 +8,18 @@ Introducing Vault-Tec Metro Explorer, a Django project designed to provide users
 
 # Projet TrainsCompany Hetic
 
-*Lancement* / 2
-*Base de Données* / 1
-*Accueil* / 3
-*Détails* / 3
-*Rechercher* / 2
-*Aléatoire* / 2
-*Navigation* / 1
-*Style* / 3
-*Commentaires* / 1
-*Nomenclature* / 1
-*Bugs* / 1
+- *Lancement* / 2
+- *Base de Données* / 1
+- *Accueil* / 3
+- *Détails* / 3
+- *Rechercher* / 2
+- *Aléatoire* / 2
+- *Navigation* / 1
+- *Style* / 3
+- *Commentaires* / 1
+- *Nomenclature* / 1
+- *Bugs* / 1
 
-**Bonus** : *Creation* / 2
+- **Bonus** : *Creation* / 2
 
 PS : Bonne découverte !
