@@ -1,0 +1,18 @@
+from vtart.models import VaultTrain
+
+VaultTrain('Gamma', 'Not Defined', 'Berlin', 54).save()
+VaultTrain('Delta', 'Not Defined', 'Wenzhou', 53).save()
+VaultTrain('Epsilon', 'Not Defined', 'Ottawa', 1).save()
+VaultTrain('Zêta', 'Not Defined', 'Pandora', 5).save()
+VaultTrain('Êta', 'Not Defined', 'Paris', 12).save()
+VaultTrain('Thêta', 'Not Defined', 'Caire', 31).save()
+VaultTrain('Iota', 'Not Defined', 'Dogtown', 23).save()
+VaultTrain('Kappa', 'Not Defined', 'Nightcity', 17).save()
+VaultTrain('Lamda', 'Not Defined', 'Virgina', 43).save()
+VaultTrain('Mu', 'Not Defined', 'Dubaï', 40).save()
+VaultTrain('Nu', 'Not Defined', 'Anthony', 33).save()
+VaultTrain('Omicron', 'Not Defined', 'Cul', 8).save()
+VaultTrain('Pi', 'Not Defined', 'Corrucentre', 19).save()
+VaultTrain('Rhô', 'Not Defined', 'Moustaffa', 21).save()
+VaultTrain('Sigma', 'Not Defined', 'Tatooine', 61).save()
+VaultTrain('Oméga', 'Not Defined', 'Andor', 56).save()

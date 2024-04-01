@@ -1,3 +1,4 @@
 from django.contrib import admin
+from vtart.models import VaultTrain
 
-# Register your models here.
+admin.site.register(VaultTrain)
