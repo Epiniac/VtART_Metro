@@ -4,14 +4,14 @@ from vtart.models import VaultTrain
 
 # Create your views here.
 def index (request) :
-    mytrain = VaultTrain.objects.all()[:5]  # 5 first train, available
+    all = VaultTrain.objects.all()
+    needed = []
 
-    lines = VaultTrain.objects.all()
+    for i in range(5):
+        needed.append(all[i])
+
     return render(request , "index.html",{
-        "name" : mytrain.name,
-        "destination" : mytrain.destination,
-        "logo" : mytrain.logo,
-        "time" : mytrain.time
+        "line" : needed,
     })
 
 def detail (request):
@@ -19,3 +19,6 @@ def detail (request):
 
 def userform (request):
     return render(request, "userform.html",{})
+
+def map(request):
+    return render(request,"map.html",{})

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,8 +144,26 @@
         }
     }
 
-    #info-block{
-        background-color:rgb(66, 66, 66);
+    .table-content {
+        background-color: #060f16;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .bloc{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: rgb(255, 243, 221);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-bottom: #000000 solid;
+    }
+
+    #line-logo {
+        width: 60px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
 </style>
@@ -158,7 +175,7 @@
                 <h1>Vault-Tec</h1>
             </div>
             <ul>
-                <li><a class="link" href="[your-link-1]">Citymap</a></li>
+                <li><a class="link" href="http://127.0.0.1:8000/vtart/map">Citymap</a></li>
                 <li><a class="link" href="[your-link-2]">Random</a></li>
                 <li><a class="link" href="[your-link-3]">Suggest</a></li>
             </ul>
@@ -184,11 +201,16 @@
                     🚂​ FIND ALL ITINERARY LIVE   🚃​   ALERT : Someone lost his condom lol    🚃​    Info: If help is needed please contact Anthony    🚃​  Breaking news: Kim Jung Un became the new beach volley champion yesterday   🚃    CLICK HERE : <a href="https://www.youtube.com/watch?v=wpV-gGA4PSk">📢​​</a>
                 </p>
             </div>
-            <div id="info-block">
-                <section>
-                    
-                </section>
-            </div>
+            <section class="table-content">
+                {% for m in line %}
+                <div class="bloc">
+                    <a href="/vtart/detail/{{ m.name }}"><img id="line-logo" src="../static/{{ m.logo }}"></a>
+                    <p> Destination : {{ m.destination }} </p>
+                    <p> Door : {{ m.name }} </p>
+                    <p> {{ m.time }} min</p>
+                </div>
+                {% endfor %}
+            </section>
         </main>
 </body>
 
