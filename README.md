@@ -26,3 +26,5 @@ Introducing Vault-Tec Metro Explorer, a Django project designed to provide users
 - **Bonus** : *Creation* / 2
 
 PS : Bonne découverte !
+
+seule 5 lignes sont entièrement réalisé avec Logo et Carte.
