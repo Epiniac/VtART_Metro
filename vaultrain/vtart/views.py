@@ -1,9 +1,9 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from.forms import UserFormInput
 from vtart.models import VaultTrain
 
 # Create your views here.
-def index (request) :
+def index(request) :
     all = VaultTrain.objects.all()
     needed = []
 
@@ -14,11 +14,21 @@ def index (request) :
         "line" : needed,
     })
 
-def detail (request):
-    return render(request, "detail.html", {})
+def detail (request, name):
+    train = VaultTrain.objects.get(name = name)
+    
+    return render(request, "detail.html", {'train': train})
 
 def userform (request):
-    return render(request, "userform.html",{})
+    if request.method == 'POST':
+        form = UserFormInput(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('http://127.0.0.1:8000/vtart/')
+    else:
+        form = UserFormInput()
+    return render(request, 'userform.html', {'form': form})
+
 
 def map(request):
     return render(request,"map.html",{})

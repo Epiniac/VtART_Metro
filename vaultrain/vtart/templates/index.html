@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="{% static 'logo.png' %}" type="image/icon type">
     <title>VtART Homepage</title>
 </head>
@@ -156,7 +157,8 @@
         flex-direction: row;
         justify-content: space-around;
         color: rgb(255, 243, 221);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: larger;
         border-bottom: #000000 solid;
     }
 
@@ -176,10 +178,13 @@
             </div>
             <ul>
                 <li><a class="link" href="http://127.0.0.1:8000/vtart/map">Citymap</a></li>
-                <li><a class="link" href="[your-link-2]">Random</a></li>
-                <li><a class="link" href="[your-link-3]">Suggest</a></li>
+                <li><a class="link" href="http://127.0.0.1:8000/vtart/detail">Random</a></li>
+                <li><a class="link" href="http://127.0.0.1:8000/vtart/userform">Suggest</a></li>
             </ul>
-            <input type="text" id="searchbar" placeholder="Search...">
+            <form id="form" role="search">
+                <input type="text" id="searchbar" name="q" placeholder="Search...">
+                <button type="submit" id="searchbar"><i class="fa fa-search"></i></button>
+            </form>
         </header>
         <main>
             <div  id="main-content">
@@ -206,12 +211,27 @@
                 <div class="bloc">
                     <a href="/vtart/detail/{{ m.name }}"><img id="line-logo" src="../static/{{ m.logo }}"></a>
                     <p> Destination : {{ m.destination }} </p>
-                    <p> Door : {{ m.name }} </p>
+                    <p> Gate : {{ m.name }} </p>
                     <p> {{ m.time }} min</p>
                 </div>
                 {% endfor %}
             </section>
         </main>
+
+        <script>
+            const form = document.getElementById('form');
+            const query = document.getElementById('query');
+            const baseUrl = 'http://127.0.0.1:8000/vtart/detail?q=';
+
+            form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const Research = query.value.trim();
+            if (Research.length > 0) {
+                const url = baseUrl + encodeURIComponent(Research);
+                window.open(url, '_blank');
+            }
+        });
+        </script>
 </body>
 
 </html>

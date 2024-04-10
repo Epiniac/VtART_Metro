@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ train.name }} details</title>
+</head>
+<style>
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #001423a5;
+        color: #fff773;
+        border-radius: 13px;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.555);
+    }
+</style>
+<body>
+    <header>
+        <a href="/vtart/">Homepage</a>
+        <h3>{{ train.name }}</h3>
+        <img src="../static/{{ train.logo}}">
+    </header>
+    <img src="../static/{{ train.submap }}">
+</body>
+</html>
