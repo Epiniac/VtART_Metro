@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/icon type">
     <title>Suggest Your Line</title>
     <style>
         body {
@@ -12,8 +13,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            background-image: url("{% static 'formbg.jpg' %}");
         }
 
         img {
@@ -23,28 +24,31 @@
         }
 
         form {
-            background-color: #fff;
+            background-color: #292827a6;
             padding: 20px;
             margin: 20%;
+            color: #fff773;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
 
-        input[type="text"],
+        input[type="text"], input[type="number"],
         textarea {
+            color: #6b6500b7;
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #000000;
+            background-color: #00000054;
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 16px;
         }
 
         input[type="submit"] {
-            background-color: #4CAF50;
-            color: #fff;
+            background-color: #001423a5;
+            color: #fff773;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -53,7 +57,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #003156a5;
         }
     </style>
 </head>

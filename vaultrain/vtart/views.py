@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from.forms import UserFormInput
 from vtart.models import VaultTrain
+from random import randint
 
 # Create your views here.
 def index(request) :
@@ -10,8 +11,11 @@ def index(request) :
     for i in range(5):
         needed.append(all[i])
 
+    lucky = randint(0,4) # J'ai mis 5 parce que j'ai pas toutes les images
+
     return render(request , "index.html",{
         "line" : needed,
+        "lucky" : all[lucky]
     })
 
 def detail (request, name):

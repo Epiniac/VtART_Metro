@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/icon type">
     <title>{{ train.name }} details</title>
 </head>
 <style>
@@ -17,13 +18,25 @@
         border-radius: 13px;
         box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.555);
     }
+
+    main{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .map{
+        margin: 10%;
+    }
 </style>
 <body>
     <header>
-        <a href="/vtart/">Homepage</a>
-        <h3>{{ train.name }}</h3>
-        <img src="/static/{{ train.logo }}" height="60">
+        <a href="http://127.0.0.1:8000/vtart/"><img class="logo" src="{% static 'logo.png' %}" alt="logo" height="60"></a>
+        <h1>{{ train.name }}</h1>
+        <img src="/static/{{ train.logo }}" height="60" class="logo">
     </header>
-    <img src="/static/{{ train.submap }}">
+    <main>
+        <img src="/static/{{ train.submap }}" height="200" class="map">
+    </main>
 </body>
 </html>
